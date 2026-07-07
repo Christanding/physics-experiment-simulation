@@ -1,0 +1,91 @@
+{
+  "source_pdf": "相关文件/第一层仿真.pdf",
+  "frequencies_hz": [
+    1000.0,
+    2000.0,
+    5000.0,
+    10000.0
+  ],
+  "input_vpp_levels": [
+    0.1,
+    1.0,
+    3.0,
+    5.0,
+    10.0
+  ],
+  "samples_per_cycle": 12,
+  "duration_s": 6.0,
+  "true_phase_deg": 8.0,
+  "phase_sweep_degrees": [
+    0.0,
+    30.0,
+    60.0,
+    90.0
+  ],
+  "noise_model": {
+    "measurement_channel": "A cos(2πf0t+phi+eta_phi) + b0 + d(t) + n_w + n_1/f + n_line + n_near",
+    "reference_channel": "Ar(1+eps_a) cos(2πf0t+eta_phi+eps_phi,r) + harmonics + n_r,w + n_r,line"
+  },
+  "measurement_noise_parameters": {
+    "white_noise_en_V_per_sqrtHz": 2e-05,
+    "white_noise_rms_V_at_1kHz_case": 0.0015491933384829668,
+    "white_noise_formula": "sigma_w = e_n * sqrt(fs / 2)",
+    "dc_offset_b0_V": 0.02,
+    "drift_sine_amp_V": 0.002,
+    "drift_linear_slope_V_per_s": 0.0002,
+    "one_over_f_rms_V": 0.0003,
+    "line_harmonic_amplitudes_V": [
+      0.0012,
+      0.0006,
+      0.0003
+    ],
+    "near_frequency_amplitudes_V": [
+      0.001,
+      0.0008
+    ],
+    "near_frequency_offsets_Hz": [
+      1.05,
+      -0.95
+    ]
+  },
+  "reference_noise_parameters": {
+    "amplitude_ripple": 0.04,
+    "dip_depths": [
+      0.3,
+      0.25
+    ],
+    "harmonics_V": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "white_noise_en_V_per_sqrtHz": 0.00025,
+    "white_noise_rms_V_at_1kHz_case": 0.019364916731037084,
+    "white_noise_formula": "sigma_r,w = e_n,r * sqrt(fs / 2)",
+    "line_leakage_V": [
+      0.01,
+      0.005
+    ],
+    "common_phase_noise_rms_rad": 0.05,
+    "reference_phase_jitter_rms_rad": 0.025
+  },
+  "algorithm_switches": {
+    "scene": {
+      "启用参考幅度起伏": true,
+      "启用参考局部掉幅": true,
+      "启用参考谐波失真": true,
+      "启用参考白噪声": true,
+      "启用参考工频泄漏": true,
+      "启用公共相位噪声": true,
+      "启用参考独立相位抖动": true,
+      "启用邻近频率干扰簇": true
+    },
+    "processing": {
+      "启用参考前置净化": true,
+      "启用包络安全归一化": true,
+      "启用异常样本剔除": true,
+      "启用参考相位平滑": true,
+      "启用加权鲁棒统计": true
+    }
+  }
+}
